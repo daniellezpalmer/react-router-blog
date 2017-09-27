@@ -21,15 +21,37 @@ componentDidMount() {
   render() {
 
     let posts = this.state.posts.map((post, index) => {
+
+let ugh = {
+  margin:30
+}
+
+let nav = {
+color:"black",
+textDecoration:"none",
+fontSize:"40",
+border:"ridge",
+borderColor:"grey",
+borderRadius:4,
+padding:10,
+margin:"40px 10px 40px 10px"
+}
+
       return (
-        <div key={index}>
-          <NavLink to={`/showpost/${post._id}`}>Blog Title: {post.blogTitle}</NavLink>
+        <div style={ugh} key={index}>
+          <NavLink style={nav} to={`/showpost/${post._id}`}>Title: {post.blogTitle}</NavLink>
         </div>
       )
     })
 
+    let post = {
+      display:"flex",
+      flexWrap:"wrap",
+      justifyContent:"center"
+    }
+
     return (
-      <div className="PostList">
+      <div style={post} className="PostList">
         {posts}
       </div>
     );

@@ -19,12 +19,22 @@ export default class ShowPost extends Component {
   }
 
   render() {
+
+let body = {
+  textAlign:"center",
+  margin:"80px 0px 0px 0px"
+}
+
+let ps = {
+  fontSize:30
+}
+
     return (
 
-      <div className="ShowPost">
-        <p>Posted by: {this.state.post.authorName}</p>
-        <p>Title: {this.state.post.blogTitle}</p>
-        <p>
+      <div style={body} className="ShowPost">
+        <p style={ps}>Posted by: {this.state.post.authorName}</p>
+        <p style={ps}>Title: {this.state.post.blogTitle}</p>
+        <p style={ps}>
           Post: {this.state.post.blogEntry}</p>
       </div>
     );

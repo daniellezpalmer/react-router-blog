@@ -46,23 +46,52 @@ export default class CreatePost extends Component {
   }
 
   render() {
+
+let form = {
+  display:"flex",
+  justifyContent:"center",
+  margin:40,
+  fontSize:40
+}
+
+let input = {
+  margin:10,
+  alignSelf:"center",
+  borderRadius:5,
+  fontSize:30
+}
+
+let btn = {
+  display:"flex",
+  justifyContent:"center"
+}
+
+let bttn = {
+fontSize:20,
+borderRadius:4
+}
+
     return (
       <div className="CreatePost">
+        <div style={form}>
         <form onSubmit={this.addToList}>
-          <label>Author:
+          <label >Author:
           </label>
-          <input type='text' id="authorName" value={this.state.authorName} onChange={this.handleChange}></input>
+          <input style={input} type='text' id="authorName" value={this.state.authorName} onChange={this.handleChange}></input>
           <br></br>
           <label>Title:
           </label>
-          <input type='text' id="blogTitle" value={this.state.blogTitle} onChange={this.handleChange}></input>
+          <input style={input} type='text' id="blogTitle" value={this.state.blogTitle} onChange={this.handleChange}></input>
           <br></br>
           <label>Entry:
           </label>
-          <textarea type='text' id="blogEntry" value={this.state.blogEntry} onChange={this.handleChange}></textarea>
+          <textarea style={input} type='text' id="blogEntry" value={this.state.blogEntry} onChange={this.handleChange}></textarea>
           <br></br>
-          <button type="button" onClick={this.addToList}>Add to list</button>
+          <div style={btn}>
+          <button style={bttn} type="button" onClick={this.addToList}>Add to list</button>
+        </div>
         </form>
+      </div>
       </div>
     );
   }
